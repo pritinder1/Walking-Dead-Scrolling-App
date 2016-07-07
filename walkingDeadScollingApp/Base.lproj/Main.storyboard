@@ -1,13 +1,15 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="walkingDeadScollingApp" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -15,11 +17,56 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="yky-Mg-SIf">
+                                <rect key="frame" x="161" y="9" width="279" height="149"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="149" id="9if-I8-Ibv"/>
+                                    <constraint firstAttribute="width" constant="279" id="X3Y-cC-TI2"/>
+                                </constraints>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="shelf" translatesAutoresizingMaskIntoConstraints="NO" id="g0u-zR-HYR">
+                                <rect key="frame" x="0.0" y="518" width="600" height="82"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="82" id="LXu-Rn-Xs9"/>
+                                </constraints>
+                            </imageView>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qkg-0m-qsb">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                            </scrollView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="g0u-zR-HYR" secondAttribute="bottom" id="6OY-bp-LcE"/>
+                            <constraint firstItem="g0u-zR-HYR" firstAttribute="top" secondItem="qkg-0m-qsb" secondAttribute="bottom" constant="-82" id="B5R-O4-ZtQ"/>
+                            <constraint firstItem="yky-Mg-SIf" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" constant="9" id="BYs-3d-gOl"/>
+                            <constraint firstAttribute="trailing" secondItem="g0u-zR-HYR" secondAttribute="trailing" id="BqP-f3-W0z"/>
+                            <constraint firstAttribute="trailing" secondItem="qkg-0m-qsb" secondAttribute="trailing" id="HDu-ua-9Op"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="g0u-zR-HYR" secondAttribute="bottom" id="Icm-IN-aRF"/>
+                            <constraint firstItem="qkg-0m-qsb" firstAttribute="top" secondItem="yky-Mg-SIf" secondAttribute="bottom" constant="-158" id="Pub-8v-l14"/>
+                            <constraint firstItem="yky-Mg-SIf" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="QQl-KL-EdM"/>
+                            <constraint firstItem="qkg-0m-qsb" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="Uc6-2m-QMN"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="g0u-zR-HYR" secondAttribute="bottom" id="VEk-0I-t4v"/>
+                            <constraint firstItem="g0u-zR-HYR" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="x6V-tp-Lw5"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="6OY-bp-LcE"/>
+                                <exclude reference="Icm-IN-aRF"/>
+                            </mask>
+                        </variation>
                     </view>
+                    <connections>
+                        <outlet property="scrollView" destination="qkg-0m-qsb" id="0VX-Lm-CMG"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="245" y="349"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="logo" width="732" height="340"/>
+        <image name="shelf" width="865" height="114"/>
+    </resources>
 </document>
